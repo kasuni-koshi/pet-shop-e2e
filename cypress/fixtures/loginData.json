@@ -1,0 +1,5 @@
+{
+  "invalidEmail": "invalidmain@gmail.com",
+  "invalidPassword": "invalid",
+  "expectedMessage": "Failed to authenticate user"
+}
