@@ -1,0 +1,6 @@
+{
+    "adminLoginEmailField": "#input-0",
+    "adminLoginPasswordField": "#input-2",
+    "adminLoginButton": "button[type='button']",
+    "adminFailedLoginMessage": ".login__error-message"
+}

@@ -35,3 +35,27 @@
 //     }
 //   }
 // }
+
+Cypress.Commands.add('clickButton', function (button) {
+    cy.get(button).should('exist').click()
+})
+
+Cypress.Commands.add('typeText', function (inputField, text) {
+    cy.get(inputField).should('exist').type(text)
+})
+
+Cypress.Commands.add('adminLogin', function (emailField, email, passwordField, password, loginButton) {
+    cy.get(emailField).should('exist').type(email)
+    cy.get(passwordField).should('exist').type(password)
+    cy.get(loginButton).should('exist').click()
+})
+
+declare namespace Cypress {
+    interface Chainable {
+        clickButton(button: string): Chainable<void>
+
+        typeText(inputField: string, text: string): Chainable<void>
+
+        adminLogin(emailField: string, email: string, passwordField: string, password: string, loginButton: string): Chainable<void>
+    }
+}
