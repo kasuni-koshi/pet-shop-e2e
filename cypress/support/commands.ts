@@ -62,6 +62,19 @@ Cypress.Commands.add('addCustomerForm', function (data: FormInputData, cusFormFi
     cy.get(addNewCusButton).click({ force: true });
 });
 
+Cypress.Commands.add('userSignUpForm', function (data: FormInputData, userFormField, userConsent, userSignUpButton) {
+    cy.get(userFormField).eq(0).type(data.firstName);
+    cy.get(userFormField).eq(1).type(data.lastName);
+    cy.get(userFormField).eq(2).type(data.email);
+    cy.get(userFormField).eq(3).type(data.phoneNumber);
+    cy.get(userFormField).eq(4).type(data.location);
+    cy.get(userFormField).eq(5).type(data.password);
+    cy.get(userFormField).eq(6).type(data.confirmPassword);
+    cy.get(userConsent).click();
+    cy.get(userSignUpButton).click({ force: true });
+});
+
+
 interface FormInputData {
     firstName: string,
     lastName: string,
@@ -81,5 +94,7 @@ declare namespace Cypress {
         adminUserLogin(loginFields: string, email: string, password: string, loginButton: string): Chainable<void>
 
         addCustomerForm(data: FormInputData, cusFormField: string, addNewCusButton: string): Chainable<Element>
+
+        userSignUpForm(data: FormInputData, userFormField: string, userConsent: string, userSignUpButton: string): Chainable<Element>
     }
 }
