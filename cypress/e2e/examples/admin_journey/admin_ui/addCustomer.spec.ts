@@ -1,7 +1,6 @@
 describe('Admin Journey - Add Customer by Admin', function () {
 
     beforeEach(function () {
-        cy.viewport(1440, 990);
         cy.visit(Cypress.env('baseUrl') + '/login/')
         cy.fixture('locators/selectors').then(function (sel) {
             cy.adminUserLogin(sel.adminLoginFields, Cypress.env('adminEmail'),
