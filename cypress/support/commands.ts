@@ -52,26 +52,26 @@ Cypress.Commands.add('adminUserLogin', function (loginFields, email, password, l
 })
 
 Cypress.Commands.add('addCustomerForm', function (data: FormInputData, cusFormField, addNewCusButton) {
-    cy.get(cusFormField).eq(0).type(data.firstName);
-    cy.get(cusFormField).eq(1).type(data.lastName);
-    cy.get(cusFormField).eq(2).type(data.email);
-    cy.get(cusFormField).eq(3).type(data.phoneNumber);
-    cy.get(cusFormField).eq(4).type(data.location);
-    cy.get(cusFormField).eq(5).type(data.password);
-    cy.get(cusFormField).eq(6).type(data.confirmPassword);
-    cy.get(addNewCusButton).click({ force: true });
+    cy.get(cusFormField).eq(0).type(data.firstName)
+    cy.get(cusFormField).eq(1).type(data.lastName)
+    cy.get(cusFormField).eq(2).type(data.email)
+    cy.get(cusFormField).eq(3).type(data.phoneNumber)
+    cy.get(cusFormField).eq(4).type(data.location)
+    cy.get(cusFormField).eq(5).type(data.password)
+    cy.get(cusFormField).eq(6).type(data.confirmPassword)
+    cy.get(addNewCusButton).click({ force: true })
 });
 
 Cypress.Commands.add('userSignUpForm', function (data: FormInputData, userFormField, userConsent, userSignUpButton) {
-    cy.get(userFormField).eq(0).type(data.firstName);
-    cy.get(userFormField).eq(1).type(data.lastName);
-    cy.get(userFormField).eq(2).type(data.email);
-    cy.get(userFormField).eq(3).type(data.phoneNumber);
-    cy.get(userFormField).eq(4).type(data.location);
-    cy.get(userFormField).eq(5).type(data.password);
-    cy.get(userFormField).eq(6).type(data.confirmPassword);
-    cy.get(userConsent).click();
-    cy.get(userSignUpButton).click({ force: true });
+    cy.get(userFormField).eq(0).type(data.firstName)
+    cy.get(userFormField).eq(1).type(data.lastName)
+    cy.get(userFormField).eq(2).type(data.email)
+    cy.get(userFormField).eq(3).type(data.phoneNumber)
+    cy.get(userFormField).eq(4).type(data.location)
+    cy.get(userFormField).eq(5).type(data.password)
+    cy.get(userFormField).eq(6).type(data.confirmPassword)
+    cy.get(userConsent).click()
+    cy.get(userSignUpButton).click({ force: true })
 });
 
 
@@ -96,5 +96,17 @@ declare namespace Cypress {
         addCustomerForm(data: FormInputData, cusFormField: string, addNewCusButton: string): Chainable<Element>
 
         userSignUpForm(data: FormInputData, userFormField: string, userConsent: string, userSignUpButton: string): Chainable<Element>
+
+        adminLoginApi(endpoint: string, formData: FormData): Chainable<Cypress.Response<any>>
+
     }
 }
+
+Cypress.Commands.add('adminLoginApi', (endpoint: string, formData: FormData) => {
+    cy.request({
+        method: 'POST',
+        url: `${Cypress.env('apiUrl')}${endpoint}`,
+        body: formData,
+        failOnStatusCode: false
+    })
+})
