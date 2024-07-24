@@ -1,0 +1,9 @@
+{
+    "cusFirstName": "John",
+    "cusLastName": "Doe",
+    "cusEmail": "john.doe999992@example.com",
+    "cusPhoneNumber": "+442079460958",
+    "cusLocation": "123 Fake Street, Springfield, London, United Kingdom",
+    "cusPassword": "password123",
+    "cusConfirmPassword": "password123"
+}

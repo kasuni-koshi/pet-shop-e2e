@@ -37,7 +37,7 @@
 // }
 
 Cypress.Commands.add('clickElement', function (button) {
-    cy.get(button).should('exist').click()
+    cy.get(button).click()
 })
 
 Cypress.Commands.add('typeText', function (inputField, text) {
@@ -51,6 +51,27 @@ Cypress.Commands.add('adminUserLogin', function (loginFields, email, password, l
     cy.get(loginButton).should('exist').click()
 })
 
+Cypress.Commands.add('addCustomerForm', function (data: FormInputData, cusFormField, addNewCusButton) {
+    cy.get(cusFormField).eq(0).type(data.firstName);
+    cy.get(cusFormField).eq(1).type(data.lastName);
+    cy.get(cusFormField).eq(2).type(data.email);
+    cy.get(cusFormField).eq(3).type(data.phoneNumber);
+    cy.get(cusFormField).eq(4).type(data.location);
+    cy.get(cusFormField).eq(5).type(data.password);
+    cy.get(cusFormField).eq(6).type(data.confirmPassword);
+    cy.get(addNewCusButton).click({ force: true });
+});
+
+interface FormInputData {
+    firstName: string,
+    lastName: string,
+    email: string,
+    phoneNumber: string,
+    location: string,
+    password: string,
+    confirmPassword: string
+}
+
 declare namespace Cypress {
     interface Chainable {
         clickElement(button: string): Chainable<void>
@@ -58,5 +79,7 @@ declare namespace Cypress {
         typeText(inputField: string, text: string): Chainable<void>
 
         adminUserLogin(loginFields: string, email: string, password: string, loginButton: string): Chainable<void>
+
+        addCustomerForm(data: FormInputData, cusFormField: string, addNewCusButton: string): Chainable<Element>
     }
 }

@@ -1,5 +1,8 @@
 {
     "adminLoginFields": ".login__form .v-field__input",
     "adminLoginButton": "button[type='button']",
-    "adminFailedLoginMessage": ".login__error-message"
+    "adminFailedLoginMessage": ".login__error-message",
+    "adminAddNewCustomerButton": ".table-header__content > .v-btn",
+    "customerFormFields": ".customer-card .v-field__input",
+    "addCustomerButton": ":nth-child(9) > .v-btn"
 }
