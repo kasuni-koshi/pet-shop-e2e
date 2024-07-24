@@ -20,7 +20,6 @@ import './commands'
 // require('./commands')
 Cypress.on('uncaught:exception', (err, runnable) => {
     if (err.message.includes('Container is not defined')) {
-      // Returning false here prevents Cypress from failing the test
       return false;
     }
 })
