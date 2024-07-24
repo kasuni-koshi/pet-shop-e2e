@@ -40,11 +40,6 @@ Cypress.Commands.add('clickElement', function (button) {
     cy.get(button).click()
 })
 
-Cypress.Commands.add('typeText', function (inputField, text) {
-    cy.get(inputField).should('exist').type(text)
-})
-
-
 Cypress.Commands.add('adminUserLogin', function (loginFields, email, password, loginButton) {
     cy.get(loginFields).eq(0).should('exist').type(email)
     cy.get(loginFields).eq(1).should('exist').type(password)
@@ -88,8 +83,6 @@ interface FormInputData {
 declare namespace Cypress {
     interface Chainable {
         clickElement(button: string): Chainable<void>
-
-        typeText(inputField: string, text: string): Chainable<void>
 
         adminUserLogin(loginFields: string, email: string, password: string, loginButton: string): Chainable<void>
 

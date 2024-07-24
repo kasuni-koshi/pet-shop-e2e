@@ -1,7 +1,6 @@
 {
     "userFirstName": "John",
     "userLastName": "Doe",
-    "userEmail": "john.doe111111@example.com",
     "userPhoneNumber": "+442079460958",
     "userLocation": "123 Fake Street, Springfield, London, United Kingdom",
     "userPassword": "password123",
