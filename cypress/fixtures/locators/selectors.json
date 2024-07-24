@@ -1,6 +1,5 @@
 {
-    "adminLoginEmailField": "#input-0",
-    "adminLoginPasswordField": "#input-2",
+    "adminLoginFields": ".login__form .v-field__input",
     "adminLoginButton": "button[type='button']",
     "adminFailedLoginMessage": ".login__error-message"
 }

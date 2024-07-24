@@ -36,7 +36,7 @@
 //   }
 // }
 
-Cypress.Commands.add('clickButton', function (button) {
+Cypress.Commands.add('clickElement', function (button) {
     cy.get(button).should('exist').click()
 })
 
@@ -44,18 +44,19 @@ Cypress.Commands.add('typeText', function (inputField, text) {
     cy.get(inputField).should('exist').type(text)
 })
 
-Cypress.Commands.add('adminLogin', function (emailField, email, passwordField, password, loginButton) {
-    cy.get(emailField).should('exist').type(email)
-    cy.get(passwordField).should('exist').type(password)
+
+Cypress.Commands.add('adminUserLogin', function (loginFields, email, password, loginButton) {
+    cy.get(loginFields).eq(0).should('exist').type(email)
+    cy.get(loginFields).eq(1).should('exist').type(password)
     cy.get(loginButton).should('exist').click()
 })
 
 declare namespace Cypress {
     interface Chainable {
-        clickButton(button: string): Chainable<void>
+        clickElement(button: string): Chainable<void>
 
         typeText(inputField: string, text: string): Chainable<void>
 
-        adminLogin(emailField: string, email: string, passwordField: string, password: string, loginButton: string): Chainable<void>
+        adminUserLogin(loginFields: string, email: string, password: string, loginButton: string): Chainable<void>
     }
 }
