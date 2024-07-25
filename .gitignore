@@ -1,0 +1,15 @@
+# Logs
+logs
+*.log
+
+# Cypress specific
+cypress/screenshots/
+cypress/videos/
+cypress/downloads/
+
+# Node
+node_modules/
+
+# dotenv environment variable files
+# .env - Should be commited to repo for the test excerise
+.env
