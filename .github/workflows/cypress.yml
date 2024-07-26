@@ -12,16 +12,18 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    
     - name: Install Cypress and Verify
-    - run:
+      run:
         npm ci
         $(npm bin)/cypress verify
+        
     - name: Run Cypress Tests
-    - run: npm run test:chrome
-    - continue-on-error: false
+      run: npm run test:chrome
+      continue-on-error: false
 
     - name: Copy test execution videos and screenshots
-    - run:
+      run:
         mkdir public
         cp -r cypress/videos public/videos
         cp -r cypress/screenshots public/screenshots
