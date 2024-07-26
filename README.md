@@ -1,4 +1,4 @@
-# [Pet Shop](https://pet-shop.buckhill.com.hr/) User Journey Testing
+# [Pet Shop](https://pet-shop.buckhill.com.hr/) Admin / User Journey Testing
 
 This repository contains automated tests for the Pet Shop Web Application using Cypress and TypeScript.
 
@@ -100,3 +100,6 @@ The project contains a [Github Actions](https://github.com/features/actions) wor
 |4|Login to Admin Application with invalid email and invalid password|N/A|1. Navigate to the URL: https://pet-shop.buckhill.com.hr/login<br>2. Enter Email Address<br>3. Enter Password<br>4. Click on Log in Button|Email: invalidmain@gmail.com<br>Password: invalid|"Failed to authenticate user" error message should be appered under the login button
 
 ### Pet Shop - Admin Journey - Add Customer by Administrator
+|Test Case No|Test Case Description|Pre-Conditions|Test Steps|Test Data|Expected Result|
+| :---: | :--- | :--- | :--- | :--- | :--- |
+|1|Adding a New Customer to the System by Administrator|Admin Account should be available with valid credentials|1. Navigate to the URL: https://pet-shop.buckhill.com.hr/login<br>2. Enter Email Address<br>3. Enter Password<br>4. Click on Log in Button<br>4. Click on Cutomers Tab<br>5. Click on Add New Customer button<br>6. Enter First Name<br>7. Enter Last Name<br>8. Enter Email<br>8. Enter Phone Number<br>9. Enter Location<br>10. Enter Password<br>11. Repeat Password in Confirm Password|First Name: John<br>Last Name: Doe<br>Email: johndoe@example.com<br>Phone Number: +44374848983<br>Location: 123 Fake Street, Springfield, London, United Kingdom<br>Password: Test@123<br>Confirm Password: Test@123|Add new customer popup should be closed after clicked on Add New Customer button. Newly added customer should be displayed on the top of the Customers List
