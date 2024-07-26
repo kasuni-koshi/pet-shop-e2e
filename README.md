@@ -6,7 +6,7 @@ This repository contains automated tests for the Pet Shop Web Application using 
 
 - [Pet-Shop Automated Tests.](#pet-shop-automated-tests)
   - [Table of Content](#table-of-contents)
-  - [Prerequisites](#prerequisites)
+  - [Pre-requisites](#prerequisites)
   - [Installation](#installation)
   - [Running the tests](#running-the-tests)
     - [Locally](#locally)
@@ -14,7 +14,7 @@ This repository contains automated tests for the Pet Shop Web Application using 
   - [Folder Structure](#folder-structure)
   - [Test Cases](#test-cases)
 
-## Prerequisites
+## Pre-requisites
 
 Before you begin, ensure you have the following:
 
