@@ -41,12 +41,6 @@ Before you begin, ensure you have the following:
     npm install
    ```
 
-3. Install the dependencies:
-
-   ```bash
-    npm install
-   ```
-
 ## Running the Tests
 
 ### Locally
