@@ -11,6 +11,7 @@ This repository contains automated tests for the Pet Shop Web Application using 
   - [Running the tests](#running-the-tests)
     - [Locally](#locally)
     - [In the CI](#in-the-ci)
+    - [Using docker-compose](#using-docker-compose)
   - [Folder Structure](#folder-structure)
   - [Test Cases](#test-cases)
 
@@ -20,6 +21,7 @@ Before you begin, ensure you have the following:
 
 - Node.js and npm installed (latest recommended)
 - Git (optional, but recommended)
+- Docker installed
 
 ## Installation
 
@@ -73,6 +75,12 @@ The following environment variables are required to run the tests and have alrea
 ### In the CI
 
 The project contains a [Github Actions](https://github.com/features/actions) workflow that run the test in the CI.[cypress.yml](.github/workflows/cypress.yml)
+
+### Using docker-compose
+
+```bash
+docker-compose up
+```
 
 ## Folder Structure
 
