@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:chrome": "npx cypress run --headless --browser chrome"
+    "test": "npx cypress run",
+    "test:chrome": "npx cypress run --headless --browser chrome",
+    "test:headed": "npx cypress run --headed --browser chrome"
   },
   "author": "",
   "license": "ISC",

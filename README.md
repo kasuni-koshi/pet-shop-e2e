@@ -51,6 +51,12 @@ Before you begin, ensure you have the following:
 
 ### Locally
 
+To rull all the tests on default browser
+
+```bash
+npm run test
+```
+
 To run all the tests in headless mode on chrome browser:
 
 ```bash
@@ -60,7 +66,7 @@ npm run test:chrome
 To run all the tests in headed mode on chrome browser:
 
 ```bash
-npm run cy:open
+npm run test:headed
 ```
 
 The following environment variables are required to run the tests and have already been configure in the [.env](.env) file
