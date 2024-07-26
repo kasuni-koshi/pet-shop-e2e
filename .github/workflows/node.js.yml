@@ -1,0 +1,27 @@
+name: Cypress Test
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    name: Cypress Run
+    runs-on: ubuntu-latest
+    container: cypress/browsers:node-20.15.1-chrome-126.0.6478.126-1-ff-128.0-edge-126.0.2592.102-1
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install Cypress and Verify
+    - run:
+        npm ci
+        $(npm bin)/cypress verify
+    - name: Run Cypress Tests
+    - run: npm run test:chrome
+    - continue-on-error: false
+
+    - name: Copy test execution videos and screenshots
+    - run:
+        mkdir public
+        cp -r cypress/videos public/videos
+        cp -r cypress/screenshots public/screenshots
